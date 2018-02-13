@@ -92,6 +92,7 @@ public class Sha256Hash implements Serializable, Comparable<Sha256Hash> {
      */
     @SuppressWarnings("deprecation") // the constructor will be made private in the future
     public static Sha256Hash wrapReversed(byte[] rawHashBytes) {
+        if(rawHashBytes==null) return null;
         return wrap(Utils.reverseBytes(rawHashBytes));
     }
 
