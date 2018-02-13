@@ -152,6 +152,7 @@ public class TransactionInput extends ChildMessage {
         cursor += outpoint.getMessageSize();
         int scriptLen = (int) readVarInt();
         length = cursor - offset + scriptLen + 4;
+        
         scriptBytes = readBytes(scriptLen);
         sequence = readUint32();
     }

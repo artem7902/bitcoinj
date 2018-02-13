@@ -336,7 +336,8 @@ public abstract class Message {
             cursor += length;
             return b;
         } catch (IndexOutOfBoundsException e) {
-            throw new ProtocolException(e);
+           e.printStackTrace();
+           return null;
         }
     }
     
