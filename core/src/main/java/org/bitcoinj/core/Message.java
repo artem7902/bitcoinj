@@ -354,6 +354,8 @@ public abstract class Message {
     protected Sha256Hash readHash() throws ProtocolException {
         // We have to flip it around, as it's been read off the wire in little endian.
         // Not the most efficient way to do this but the clearest.
+        final byte[] tempBytes = readBytes(32);
+        if(tempBytes==null) return null;
         return Sha256Hash.wrapReversed(readBytes(32));
     }
 
